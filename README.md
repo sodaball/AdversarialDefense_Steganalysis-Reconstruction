@@ -24,8 +24,10 @@ python classify.py -i clean
 
 ​	结果：
 
-<img src="img\image-20230422184028505.png" alt="image-20230422184028505" style="zoom:67%;" />
-
+```python
+分类准确率：85.47%
+平均损失：0.643
+```
 
 
 ## Step2：生成攻击样本
@@ -75,17 +77,26 @@ python classify.py -i attack
 
 1. eps = 0.01
 
-   <img src="img\image-20230422184522119.png" alt="image-20230422184522119" style="zoom:67%;" />
+```python
+分类准确率：34.34%
+平均损失：5.826
+```
 
-2. eps = 0.05
+3. eps = 0.05
 
-   <img src="img\image-20230424170043863.png" alt="image-20230424170043863" style="zoom:67%;" />
+```python
+分类准确率：7.11%
+平均损失：8.948
+```
 
-3. eps = 0.1
+4. eps = 0.1
 
-   <img src="img\image-20230424165806651.png" alt="image-20230424165806651" style="zoom:67%;" />
+```python
+分类准确率：7.29%
+平均损失：7.096
+```
 
-​	可见分类准确率比干净样本降低了很多，说明FGSM攻击有效。
+可见分类准确率比干净样本降低了很多，说明FGSM攻击有效。
 
 
 
@@ -118,15 +129,21 @@ python fisher.py -eps 0.01
 
 eps = 0.01 : 
 
-<img src="img\image-20230422183815649.png" alt="image-20230422183815649" style="zoom:50%;" />
+```python
+Accuracy: 0.724
+```
 
 eps = 0.05:
 
-<img src="img\image-20230422182826694.png" alt="image-20230422182826694" style="zoom:50%;" />
+```python
+Accuracy: 0.84425
+```
 
 eps = 0.1:
 
-<img src="img\image-20230422182650836.png" alt="image-20230422182650836" style="zoom:50%;" />
+```python
+Accuracy: 0.91975
+```
 
 ​	可见eps在0.05/0.1时，基于spam特征的fisher分类器的分类准确率较高，特别是在eps为0.1时，分类准确率达到91.975%，说明基于隐写分析的检测性防御能够有效检测出对抗样本，说明可以有效地将对抗样本和干净样本进行分离，这为后续的鲁棒性防御奠定了基础。
 
@@ -186,7 +203,10 @@ python classify.py -i rebuild
 
 结果：
 
-<img src="img\image-20230424173122524.png" alt="image-20230424173122524" style="zoom:67%;" />
+```python
+分类准确率：39.55%
+平均损失：3.955
+```
 
 
 
